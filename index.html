@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A clear, responsive grade calculator for five subjects.">
+  <title>Grade Calculator | Mark your progress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Grade Calculator home">
+        <span class="brand-mark" aria-hidden="true">GC</span>
+        <span>Grade Calculator</span>
+      </a>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span id="theme-label">Dark mode</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="intro-grid" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">Academic snapshot</p>
+          <h1 id="page-title">Make every mark count.</h1>
+          <p class="intro-text">Enter five subject marks to turn a rough score sheet into a clear next step.</p>
+        </div>
+        <div class="rule-tile" aria-label="Calculation summary">
+          <span class="rule-number">05</span>
+          <span class="rule-label">subjects<br>one clear result</span>
+        </div>
+      </section>
+
+      <section class="workspace-grid" aria-label="Grade calculator workspace">
+        <form class="calculator-form" id="calculator-form" novalidate>
+          <div class="form-heading">
+            <div>
+              <p class="eyebrow">Start here</p>
+              <h2>Build a result</h2>
+            </div>
+            <span class="required-note">All fields required</span>
+          </div>
+
+          <div class="name-field field-group">
+            <label for="student-name">Student name</label>
+            <input id="student-name" name="studentName" type="text" autocomplete="name" placeholder="e.g. Aisha Rahman" aria-describedby="student-name-error">
+            <p class="field-error" id="student-name-error" role="alert"></p>
+          </div>
+
+          <fieldset class="subjects-fieldset">
+            <legend>Subject marks</legend>
+            <div class="subject-grid">
+              <div class="field-group">
+                <label for="math">Math</label>
+                <div class="mark-input"><input id="math" name="math" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="00" aria-describedby="math-error"><span>/ 100</span></div>
+                <p class="field-error" id="math-error" role="alert"></p>
+              </div>
+              <div class="field-group">
+                <label for="english">English</label>
+                <div class="mark-input"><input id="english" name="english" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="00" aria-describedby="english-error"><span>/ 100</span></div>
+                <p class="field-error" id="english-error" role="alert"></p>
+              </div>
+              <div class="field-group">
+                <label for="science">Science</label>
+                <div class="mark-input"><input id="science" name="science" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="00" aria-describedby="science-error"><span>/ 100</span></div>
+                <p class="field-error" id="science-error" role="alert"></p>
+              </div>
+              <div class="field-group">
+                <label for="history">History</label>
+                <div class="mark-input"><input id="history" name="history" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="00" aria-describedby="history-error"><span>/ 100</span></div>
+                <p class="field-error" id="history-error" role="alert"></p>
+              </div>
+              <div class="field-group">
+                <label for="computer">Computer</label>
+                <div class="mark-input"><input id="computer" name="computer" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="00" aria-describedby="computer-error"><span>/ 100</span></div>
+                <p class="field-error" id="computer-error" role="alert"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Calculate result <span aria-hidden="true">→</span></button>
+            <button class="text-button" type="reset">Clear fields</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="result-card" id="result-card" aria-labelledby="result-title" aria-live="polite">
+          <div class="result-empty" id="result-empty">
+            <span class="result-icon" aria-hidden="true">◎</span>
+            <p class="eyebrow">Your result</p>
+            <h2 id="result-title">Ready when you are.</h2>
+            <p>Complete the five marks to see the full academic snapshot here.</p>
+          </div>
+          <div class="result-content" id="result-content" hidden>
+            <div class="result-header">
+              <div>
+                <p class="eyebrow">Latest result</p>
+                <h2 id="result-name">Student name</h2>
+              </div>
+              <span class="result-badge" id="result-badge">Pass</span>
+            </div>
+            <div class="metric-grid">
+              <div class="metric metric-total"><span>Total</span><strong id="result-total">000</strong><small>/ 500</small></div>
+              <div class="metric"><span>Average</span><strong id="result-average">00.00</strong><small>/ 100</small></div>
+              <div class="metric metric-grade"><span>Grade</span><strong id="result-grade">A+</strong><small>final grade</small></div>
+            </div>
+            <div class="weak-subjects" id="weak-subjects" hidden>
+              <p class="eyebrow">Needs attention</p>
+              <p id="weak-subject-list"></p>
+            </div>
+            <p class="result-footnote" id="result-footnote">Saved in this browser just now.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grade-guide" aria-labelledby="grade-guide-title">
+        <div><p class="eyebrow">The scale</p><h2 id="grade-guide-title">Grade guide</h2></div>
+        <div class="grade-list" aria-label="Grade thresholds">
+          <span><b>A+</b> 90–100</span><span><b>A</b> 80–89</span><span><b>B</b> 70–79</span><span><b>C</b> 60–69</span><span><b>D</b> 50–59</span><span><b>F</b> below 50</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>Five marks. One honest snapshot.</span><span>Client-side &middot; private by design</span></footer>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
