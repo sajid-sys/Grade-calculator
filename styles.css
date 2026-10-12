@@ -125,7 +125,7 @@ input:focus { border-color: var(--teal); box-shadow: 0 0 0 4px color-mix(in srgb
 .result-empty { display: flex; min-height: 400px; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
 .result-empty .eyebrow, .result-content .eyebrow { color: #f3a087; }
 .result-empty h2 { max-width: 230px; margin-bottom: 13px; color: #fff; font-size: 2.4rem; }
-.result-empty p:not(.eyebrow) { max-width: 255px; margin-bottom: 0; color: #a9bec2; line-height: 1.6; }
+.result-empty p:not(.eyebrow) { max-width: 255px; margin-bottom: 0; color: #d5e3e4; line-height: 1.6; }
 .result-icon { display: grid; width: 48px; height: 48px; margin-bottom: 28px; place-items: center; border: 1px solid rgba(255,255,255,0.26); border-radius: 50%; color: #f3a087; font-size: 1.65rem; }
 .result-content { position: relative; z-index: 1; }
 .result-header { align-items: center; margin-bottom: 37px; }
@@ -134,15 +134,15 @@ input:focus { border-color: var(--teal); box-shadow: 0 0 0 4px color-mix(in srgb
 .result-badge.fail { background: var(--danger); color: #fff; }
 .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .metric { display: flex; min-height: 117px; flex-direction: column; justify-content: space-between; padding: 17px; border: 1px solid rgba(255,255,255,0.14); border-radius: 13px; background: rgba(255,255,255,0.07); }
-.metric span, .metric small { color: #a9bec2; font-size: 0.72rem; }
+.metric span, .metric small { color: #d5e3e4; font-size: 0.72rem; }
 .metric strong { color: #fff; font-family: "Space Grotesk", sans-serif; font-size: 2.2rem; line-height: 1; }
 .metric-total { grid-column: 1 / -1; min-height: 132px; background: var(--accent); border-color: transparent; }
 .metric-total span, .metric-total small, .metric-total strong { color: #fff; }
 .metric-total strong { font-size: 3.6rem; }
 .weak-subjects { margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.16); }
 .weak-subjects .eyebrow { margin-bottom: 8px; }
-.weak-subjects p:last-child { margin-bottom: 0; color: #ffd8d0; font-size: 0.85rem; line-height: 1.55; }
-.result-footnote { margin: 30px 0 0; color: #789198; font-size: 0.7rem; }
+.weak-subjects p:last-child { margin-bottom: 0; color: #ffe9e2; font-size: 0.85rem; line-height: 1.55; }
+.result-footnote { margin: 30px 0 0; color: #b9ced0; font-size: 0.7rem; }
 
 .grade-guide { display: grid; grid-template-columns: 180px 1fr; gap: 20px; align-items: center; margin-top: 20px; padding: 22px 28px; animation: rise-in 600ms 300ms ease-out both; }
 .grade-list { display: flex; flex-wrap: wrap; gap: 9px; justify-content: flex-end; }
