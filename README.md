@@ -1,28 +1,18 @@
 # Grade Calculator
 
-A responsive five-subject grade calculator built with plain HTML, CSS, and JavaScript.
+## Intuition
 
-## What works
+A simple tool for turning five subject marks into a letter grade system result.
 
-- Student name and five subject mark inputs.
-- Required, numeric, and 0-100 validation.
-- Total, two-decimal average, exact grade table, and pass/fail rule.
-- Subjects below 33 are listed on the result card.
-- Latest valid result is restored from localStorage after refresh.
-- Light and dark theme toggle.
-- Responsive desktop and mobile layout.
+## Approach
 
-## What is missing
+The app validates each mark, calculates the total and average, assigns a grade, and checks pass or fail status using plain HTML, CSS, and JavaScript.
 
-- No backend, accounts, cloud storage, or export feature. This is intentionally a client-only project.
+## User Guide
 
-## AI usage
+- Enter the student name.
+- Enter marks from 0 to 100 for all five subjects.
+- Select "Calculate result" to view the result.
+- Use "Clear fields" to start again.
 
-- Tool: GitHub Copilot in VS Code.
-- Files touched with assistance: README.md, index.html, styles.css, script.js.
-- Prompt used: create a one-page responsive grade calculator with a bento-grid UI, theme toggle, validation, grade/pass rules, and localStorage persistence.
-- Logic note: the JavaScript is included in this repository for review and should be understood and explained by the participant before submission.
-
-## Run locally
-
-Open `index.html` directly in a browser, or serve this folder with any static file server.
+Open `index.html` in a browser to run the project.
